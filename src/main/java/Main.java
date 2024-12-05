@@ -10,19 +10,26 @@ public class Main {
             printMenu();
             System.out.println("Введи команду: ");
             int n = scanner.nextInt();
-            if (n == 1) {
-                stepTracker.addNewNumberStepsPerDay();
-            }else if (n == 2) {
-                stepTracker.changeStepGoal();
-            }else if (n == 3) {
-                stepTracker.printStatistics();
-            }else if(n == 4) {
-                break;
-            } else if (n>4 || n<1) {
-                System.out.println("Неверное значение");
+
+            switch (n) {
+                case 1:
+                    stepTracker.addNewNumberStepsPerDay();
+                    break;
+                case 2:
+                    stepTracker.changeStepGoal();
+                    break;
+                case 3:
+                    stepTracker.printStatistics();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Неверное значение");
+                    break;
             }
         }
     }
+
     public static void printMenu() {
         System.out.println("Меню: ");
         System.out.println("1. Ввести количество шагов за определённый день");

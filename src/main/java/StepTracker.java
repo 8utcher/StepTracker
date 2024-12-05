@@ -69,16 +69,16 @@ public class StepTracker {
         int totalSteps = currentMonthData.maxSteps();
         System.out.println("Самое большое количество шагов за месяц: " + totalSteps);
 
-        int averageSteps = totalSteps / 30;
+        int averageSteps = currentMonthData.sumStepsFromMonth() / 30;
         System.out.println("Среднее количество шагов за месяц: " + averageSteps);
 
-        int distanceKm = convertor.convertToKm(totalSteps);
+        double distanceKm = convertor.convertToKm( totalSteps);
         System.out.println("Пройденная дистанция в км: " + distanceKm);
 
-        int kilocalories = convertor.covertToKilocalories(totalSteps);
+        int kilocalories = convertor.covertToKilocalories((int) totalSteps);
         System.out.println("Количество сожженных калорий: " + kilocalories);
 
-        int bestSeries = currentMonthData.bestSeries(distanceKm);
+        int bestSeries = currentMonthData.bestSeries((int) distanceKm);
         System.out.println("Лучшая серия: " + bestSeries + " дня");
 
         int sumStepsForMonth = currentMonthData.sumStepsFromMonth();

@@ -1,8 +1,7 @@
 public class Convertor {
 
-    public int convertToKm(int steps){
-        double distanceInKm = (steps * 0.75) / 1000;
-        return (int) distanceInKm;
+    public double convertToKm(int steps){
+        return (steps * 0.75) / 1000;
     }
 
     public int covertToKilocalories(int steps){

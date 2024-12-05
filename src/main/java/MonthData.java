@@ -9,24 +9,21 @@ public class MonthData {
     }
 
     public void printDaysAndStepsFromMonth() {
-        for (int i = 0; i < days.length; i++) {
+        for (int i = 0; i < days.length; i++)
             System.out.println((i+1) + " день: " + days[i]);
-        }
     }
 
     public int sumStepsFromMonth() {
         int sum = 0;
-        for (int i = 0; i < days.length; i++) {
+        for (int i = 0; i < days.length; i++)
             sum += days[i];
-        }
         return sum;
     }
 
     public int maxSteps() {
         int max = days[0];
-        for (int step : days) {
-            if (step > max) {max = step;}
-        }
+        for (int step : days)
+            if (step > max) max = step;
         return max;
     }
 
